@@ -9,7 +9,6 @@ public class FileReader {
     private final List<Flower> trainFlowers = new ArrayList<>();
 
     public FileReader() {
-        //reading files
         try(Scanner testScanner = new Scanner(new File("resources/test-set"))){
             xyz(testScanner, testFlowers);
         } catch (FileNotFoundException e) {

@@ -1,9 +1,7 @@
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
     private int mode;
-
     public int getMode() {
         return mode;
     }
@@ -16,14 +14,15 @@ public class Menu {
     }
 
     public void chooseMode() {
+        Scanner scanner1 = new Scanner(System.in);
         System.out.println("Do you want to play on your points?");
-        Scanner scanner = new Scanner(System.in);
         boolean exitFlag = false;
         while (!exitFlag) {
-            if (scanner.nextInt() == 1) {
+            int userInput = scanner1.nextInt();
+            if (userInput == 1) {
                 mode = 1;
                 exitFlag = true;
-            } else if (scanner.nextInt() == 2) {
+            } else if (userInput == 2) {
                 mode = 2;
                 exitFlag = true;
             } else {
@@ -32,8 +31,9 @@ public class Menu {
         }
     }
     public int getKValue() {
+        Scanner scanner2 = new Scanner(System.in);
         System.out.println("Witaj mpp1, podaj liczbe k: [k musi byc intem]");
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextInt();
+        String k = scanner2.nextLine();
+        return Integer.parseInt(k);
     }
 }
